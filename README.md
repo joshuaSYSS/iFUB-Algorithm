@@ -1,6 +1,23 @@
 # Avg-Linear-Time-Diameter-algorithm
 Presenting linear O(M) Diamter finding algorithm with worst case O(m * n). This is simply a C++ implementation of this iFUB algorithm.
 
+<h2>iFUB Algorithm</h2>
+nput: A graph G, a node u, a lower bound l for the diameter, and an integer k
+Output: A value M such that D − M ≤ k
+i ← ecc(u);
+lb ← max{ecc(u), l};
+ub ← 2ecc(u);
+while ub − lb > k do
+if max{lb, Bi(u)} > 2(i − 1) then
+return max{lb, Bi(u)};
+else
+lb ← max{lb, Bi(u)};
+ub ← 2(i − 1);
+end
+i ← i − 1;
+end
+return lb;
+
 # NOT COMPLETED
 Accept help from Anyone. Simply push it.
 
