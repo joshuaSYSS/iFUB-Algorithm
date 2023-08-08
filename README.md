@@ -1,22 +1,42 @@
 # Avg-Linear-Time-Diameter-algorithm
 Presenting linear O(M) Diamter finding algorithm with worst case O(m * n). This is simply a C++ implementation of this iFUB algorithm.
 
-<h2>iFUB Algorithm</h2>
-nput: A graph G, a node u, a lower bound l for the diameter, and an integer k
+<h3>iFUB Algorithm Psedocode</h3>
+Input: A graph G, a node u, a lower bound l for the diameter, and an integer k
 Output: A value M such that D − M ≤ k
 i ← ecc(u);
 lb ← max{ecc(u), l};
 ub ← 2ecc(u);
 while ub − lb > k do
-if max{lb, Bi(u)} > 2(i − 1) then
-return max{lb, Bi(u)};
-else
-lb ← max{lb, Bi(u)};
-ub ← 2(i − 1);
-end
+  if max{lb, Bi(u)} > 2(i − 1) then
+    return max{lb, Bi(u)};
+  else
+    lb ← max{lb, Bi(u)};
+    ub ← 2(i − 1);
+  end
 i ← i − 1;
 end
 return lb;
+
+<h3>4-SWEEP Algorithm Psedocode</h3>
+Input: A graph G
+Output: A lower bound for the diameter of G and a node with (hopefully) low eccentricity
+r1 ← random node of G or node with the highest degree;
+a1 ← argmaxv∈V d(r1, v);
+b1 ← argmaxv∈V d(a1, v);
+r2 ← the node in the middle of the path between a1 and b1;
+a2 ← argmaxv∈V d(r2, v);
+b2 ← argmaxv∈V d(a2, v);
+u ← the node in the middle of the path between a2 and b2;
+lowerb ← max{ecc(a1), ecc(a2)};
+return lowerb and u;
+
+<h3>iFUB Termination Theorem.</h3> For any 1 ≤ i < ecc(u) and 1 ≤ k < i, and for any x ∈ Fi−k(u) such that ecc(x) > 2(i − 1), there exists yx ∈ Fj(u) such that d(x, yx) = ecc(x) with j ≥ i.
+
+<h3>Observation 1. </h3> for any x and y in V such that x ∈ Fi(u) or y ∈ Fi(u), we have that d(x, y) ≤ Bi(u): indeed, d(x, y) ≤ min{ecc(x), ecc(y)} ≤ Bi(u). 
+<h3>Observation 2. </h3>for any 1 ≤ i, j ≤ ecc(u) and for any x ∈ Fi(u) and y ∈ Fj(u), we have d(x, y) ≤ i + j ≤ 2 max{i, j}.
+
+<h3>Proof.</h3> Since ecc(x) > 2(i − 1), then there exists yx whose distance from x is equal to ecc(x) and, hence, greater than 2(i − 1). If yx was in Fj(u) with j < i, then from the previous observation it would follow that d(x, yx) ≤ 2 max{i − k, j} ≤ 2 max{i − k, i − 1} = 2(i − 1), which is a contradiction. Hence, yx must be in Fj(u) with j ≥ i. 
 
 # NOT COMPLETED
 Accept help from Anyone. Simply push it.
