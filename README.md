@@ -2,7 +2,9 @@
 Presenting linear O(M) Diamter finding algorithm with worst case O(m * n). This is simply a C++ implementation of this iFUB algorithm.
 
 # NOT COMPLETED
+Accept help from Anyone. Simply push it.
 
+# Cite
 Pilu Crescenzi, Roberto Grossi, Michel Habib, Leonardo Lanzi, Andrea Marino,
 On computing the diameter of real-world undirected graphs,
 Theoretical Computer Science,
