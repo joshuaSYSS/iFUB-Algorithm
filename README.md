@@ -2,6 +2,7 @@
 Presenting linear O(M) Diamter finding algorithm with worst case O(m * n). This is simply a C++ implementation of this iFUB algorithm.
 
 <h3>iFUB Algorithm Psedocode</h3>
+<pre>
 Input: A graph G, a node u, a lower bound l for the diameter, and an integer k
 Output: A value M such that D − M ≤ k
 i ← ecc(u);
@@ -17,8 +18,10 @@ while ub − lb > k do
 i ← i − 1;
 end
 return lb;
+</pre>
 
 <h3>4-SWEEP Algorithm Psedocode</h3>
+<pre>
 Input: A graph G
 Output: A lower bound for the diameter of G and a node with (hopefully) low eccentricity
 r1 ← random node of G or node with the highest degree;
@@ -30,6 +33,7 @@ b2 ← argmaxv∈V d(a2, v);
 u ← the node in the middle of the path between a2 and b2;
 lowerb ← max{ecc(a1), ecc(a2)};
 return lowerb and u;
+</pre>
 
 <h3>iFUB Termination Theorem.</h3> For any 1 ≤ i < ecc(u) and 1 ≤ k < i, and for any x ∈ Fi−k(u) such that ecc(x) > 2(i − 1), there exists yx ∈ Fj(u) such that d(x, yx) = ecc(x) with j ≥ i.
 
