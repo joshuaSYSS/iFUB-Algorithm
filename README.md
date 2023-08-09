@@ -1,4 +1,4 @@
-# Avg-Linear-Time-Diameter-algorithm
+# iFUB algorithm
 Presenting linear O(M) Diamter finding algorithm with worst case O(m * n). This is simply a C++ implementation of this iFUB algorithm.
 
 <h3>iFUB Algorithm Psedocode</h3>
